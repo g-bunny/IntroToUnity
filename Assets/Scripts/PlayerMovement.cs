@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 		if (coll.gameObject.layer == LayerMask.NameToLayer ("Death")) {
 			SceneManager.LoadScene ("FightingTheMachine");
 			//for collision with collectibles
-		} else if (coll.gameObject.layer == LayerMask.NameToLayer ("Collectibles")) {
+		} else if (coll.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
 			Destroy (coll.gameObject);
 			audio.Play ();
 			//scale multiplier, each time an object is "eaten", the multiiplier grows by 1
@@ -61,9 +61,4 @@ public class PlayerMovement : MonoBehaviour
 		//setting the value of the text to be printed
 		scoreText.text = "Score: " + point.ToString ();
 	}
-
-	//	void OnCollisionEnter2D (Collision2D coll)
-	//	{
-	//		Application.LoadLevel (Application.loadedLevel);
-	//	}
 }
